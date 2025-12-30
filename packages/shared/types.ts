@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import type { ApiRoutes } from '../../apps/api/index';
+import type { ApiRoutes } from '../../apps/server/index';
 import type { orderSchema, sortBySchema } from './schemas';
 
 export { type ApiRoutes };

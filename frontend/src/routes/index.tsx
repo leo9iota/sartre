@@ -1,8 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import {
-  infiniteQueryOptions,
-  useSuspenseInfiniteQuery,
-} from '@tanstack/react-query';
+import { infiniteQueryOptions, useSuspenseInfiniteQuery } from '@tanstack/react-query';
 import { fallback, zodSearchValidator } from '@tanstack/router-zod-adapter';
 
 import { z } from 'zod';
@@ -11,8 +8,8 @@ import { orderSchema, sortBySchema } from '@/shared/types';
 import { getPosts } from '@/lib/api';
 import { useUpvotePost } from '@/lib/api-hooks';
 import { Button } from '@/components/ui/button';
-import { Post } from '@/components/Post';
-import { SortButton } from '@/components/SortButton';
+import { Post } from '@/components/common/Post';
+import { SortButton } from '@/components/common/SortButton';
 
 const homeSearchSchema = z.object({
   sortBy: fallback(sortBySchema, 'points').default('recent'),
@@ -67,10 +64,9 @@ export const Route = createFileRoute('/')({
 
 function HomeComponent() {
   const { sortBy, order, author, site } = Route.useSearch();
-  const { data, isFetchingNextPage, fetchNextPage, hasNextPage } =
-    useSuspenseInfiniteQuery(
-      postsInfiniteQueryOptions({ sortBy, order, author, site }),
-    );
+  const { data, isFetchingNextPage, fetchNextPage, hasNextPage } = useSuspenseInfiniteQuery(
+    postsInfiniteQueryOptions({ sortBy, order, author, site }),
+  );
 
   const upvoteMutation = useUpvotePost();
   return (
@@ -94,11 +90,7 @@ function HomeComponent() {
           onClick={() => fetchNextPage()}
           disabled={!hasNextPage || isFetchingNextPage}
         >
-          {isFetchingNextPage
-            ? 'Loading more...'
-            : hasNextPage
-              ? 'Load more'
-              : 'Nothing more'}
+          {isFetchingNextPage ? 'Loading more...' : hasNextPage ? 'Load more' : 'Nothing more'}
         </Button>
       </div>
     </div>

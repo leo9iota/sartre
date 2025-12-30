@@ -1,9 +1,4 @@
-import {
-  createFileRoute,
-  useBlocker,
-  useNavigate,
-  useRouter,
-} from '@tanstack/react-router';
+import { createFileRoute, useBlocker, useNavigate, useRouter } from '@tanstack/react-router';
 import { useForm } from '@tanstack/react-form';
 import { useQueryClient } from '@tanstack/react-query';
 import { useStore } from '@tanstack/react-store';
@@ -12,17 +7,11 @@ import { toast } from 'sonner';
 
 import { postSubmit } from '@/lib/api';
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { FieldInfo } from '@/components/FieldInfo';
+import { FieldInfo } from '@/components/common/FieldInfo';
 
 export const Route = createFileRoute('/_auth/submit')({
   component: () => <Submit />,
@@ -49,8 +38,7 @@ function Submit() {
         await navigate({ to: '/post', search: { id: res.data.postId } });
         return;
       } else {
-        if (!res.isFormError)
-          toast.error('Failed to create post', { description: res.error });
+        if (!res.isFormError) toast.error('Failed to create post', { description: res.error });
 
         form.setErrorMap({
           onSubmit: (res.isFormError ? res.error : 'Unexpected error') as any,
@@ -59,10 +47,7 @@ function Submit() {
     },
   });
 
-  const shouldBlock = useStore(
-    form.store,
-    (state) => state.isDirty && !state.isSubmitting,
-  );
+  const shouldBlock = useStore(form.store, (state) => state.isDirty && !state.isSubmitting);
   useBlocker({
     condition: shouldBlock,
     blockerFn: () => window.confirm('Are you sure you want to leave?'),
@@ -73,9 +58,7 @@ function Submit() {
       <Card className='mx-auto mt-12 max-w-lg border-border/25'>
         <CardHeader>
           <CardTitle>Create New Post</CardTitle>
-          <CardDescription>
-            Leave the URL field empty to submit a question.
-          </CardDescription>
+          <CardDescription>Leave the URL field empty to submit a question.</CardDescription>
         </CardHeader>
         <form
           onSubmit={(event) => {

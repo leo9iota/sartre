@@ -4,14 +4,9 @@ import { useQueryErrorResetBoundary } from '@tanstack/react-query';
 
 import { AlertTriangleIcon } from 'lucide-react';
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from './ui/accordion';
-import { Alert, AlertDescription, AlertTitle } from './ui/alert';
-import { Button } from './ui/button';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
+import { Alert, AlertDescription, AlertTitle } from '../ui/alert';
+import { Button } from '../ui/button';
 
 export function ErrorInfo({ error }: { error: Error }) {
   const router = useRouter();
@@ -55,9 +50,7 @@ export function ErrorInfo({ error }: { error: Error }) {
                     <h3 className='mb-2 font-semibold'>Error Message:</h3>
                     <p className='mb-4 text-sm'>{error.message}</p>
                     <h3 className='mb-2 font-semibold'>Stack Trace:</h3>
-                    <pre className='overflow-x-auto whitespace-pre-wrap text-xs'>
-                      {error.stack}
-                    </pre>
+                    <pre className='overflow-x-auto whitespace-pre-wrap text-xs'>{error.stack}</pre>
                   </div>
                 </AccordionContent>
               </AccordionItem>

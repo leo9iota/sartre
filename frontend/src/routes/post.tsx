@@ -13,14 +13,13 @@ import { ChevronDownIcon } from 'lucide-react';
 import { z } from 'zod';
 
 import { orderSchema, sortBySchema } from '@/shared/types';
-import { getComments, getPost } from '@/lib/api';
+import { getComments, getPost, userQueryOptions } from '@/lib/api';
 import { useUpvoteComment, useUpvotePost } from '@/lib/api-hooks';
-import { userQueryOptions } from '@/lib/api';
 import { Card, CardContent } from '@/components/ui/card';
-import { Comment } from '@/components/Comment';
-import { CommentForm } from '@/components/CommentForm';
-import { Post as PostComponent } from '@/components/Post';
-import { SortButton } from '@/components/SortButton';
+import { Comment } from '@/components/common/Comment';
+import { CommentForm } from '@/components/common/CommentForm';
+import { Post as PostComponent } from '@/components/common/Post';
+import { SortButton } from '@/components/common/SortButton';
 
 const postSearchSchema = z.object({
   id: fallback(z.number(), 0).default(0),

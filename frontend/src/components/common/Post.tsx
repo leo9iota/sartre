@@ -17,24 +17,18 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from './ui/alert-dialog';
-import { badgeVariants } from './ui/badge';
-import { Button } from './ui/button';
-import { Card, CardContent, CardTitle } from './ui/card';
+} from '../ui/alert-dialog';
+import { badgeVariants } from '../ui/badge';
+import { Button } from '../ui/button';
+import { Card, CardContent, CardTitle } from '../ui/card';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from './ui/dropdown-menu';
+} from '../ui/dropdown-menu';
 
-export const Post = ({
-  post,
-  onUpvote,
-}: {
-  post: PostType;
-  onUpvote?: (id: number) => void;
-}) => {
+export const Post = ({ post, onUpvote }: { post: PostType; onUpvote?: (id: number) => void }) => {
   const { data: user } = useQuery(userQueryOptions());
   const deletePostMutation = useDeletePost();
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
@@ -67,10 +61,7 @@ export const Post = ({
             <div className='flex grow flex-wrap items-center gap-x-2 pb-1'>
               <CardTitle className='text-xl font-medium'>
                 {post.url ? (
-                  <a
-                    href={post.url}
-                    className='text-foreground hover:text-primary hover:underline'
-                  >
+                  <a href={post.url} className='text-foreground hover:text-primary hover:underline'>
                     {post.title}
                   </a>
                 ) : (
@@ -116,28 +107,18 @@ export const Post = ({
             )}
           </div>
           <CardContent className='p-3 pt-0'>
-            {post.content && (
-              <p className='mb-2 text-sm text-foreground'>{post.content}</p>
-            )}
+            {post.content && <p className='mb-2 text-sm text-foreground'>{post.content}</p>}
             <div className='flex flex-wrap items-center gap-x-1 text-xs text-muted-foreground'>
               <span>
                 by{' '}
-                <Link
-                  className='hover:underline'
-                  to={'/'}
-                  search={{ author: post.author.id }}
-                >
+                <Link className='hover:underline' to={'/'} search={{ author: post.author.id }}>
                   {post.author.username}
                 </Link>
               </span>
               <span>·</span>
               <span>{relativeTime(post.createdAt)}</span>
               <span>·</span>
-              <Link
-                to={'/post'}
-                search={{ id: post.id }}
-                className='hover:underline'
-              >
+              <Link to={'/post'} search={{ id: post.id }} className='hover:underline'>
                 {post.commentCount} comments
               </Link>
             </div>
@@ -150,8 +131,7 @@ export const Post = ({
           <AlertDialogHeader>
             <AlertDialogTitle>Delete Post</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you want to delete this post? This action cannot be
-              undone.
+              Are you sure you want to delete this post? This action cannot be undone.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>

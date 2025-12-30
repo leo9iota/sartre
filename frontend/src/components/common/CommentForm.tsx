@@ -4,9 +4,9 @@ import { toast } from 'sonner';
 
 import { commentSchema } from '@/shared/types';
 import { useCreateComment } from '@/lib/api-hooks';
+import { Button } from '../ui/button';
+import { Textarea } from '../ui/textarea';
 import { FieldInfo } from './FieldInfo';
-import { Button } from './ui/button';
-import { Textarea } from './ui/textarea';
 
 export function CommentForm({
   id,
@@ -41,9 +41,7 @@ export function CommentForm({
                 });
               }
               form.setErrorMap({
-                onSubmit: (data.isFormError
-                  ? data.error
-                  : 'Unexpected error') as any,
+                onSubmit: (data.isFormError ? data.error : 'Unexpected error') as any,
               });
               throw new Error(data.error);
             } else {

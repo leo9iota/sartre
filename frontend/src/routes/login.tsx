@@ -1,11 +1,5 @@
 import { useState } from 'react';
-import {
-  createFileRoute,
-  Link,
-  redirect,
-  useNavigate,
-  useRouter,
-} from '@tanstack/react-router';
+import { createFileRoute, Link, redirect, useNavigate, useRouter } from '@tanstack/react-router';
 import { useForm } from '@tanstack/react-form';
 import { useQueryClient } from '@tanstack/react-query';
 import { fallback, zodSearchValidator } from '@tanstack/router-zod-adapter';
@@ -14,21 +8,15 @@ import { toast } from 'sonner';
 import { z } from 'zod';
 
 import { loginSchema } from '@/shared/types';
-import { signIn } from '@/lib/auth-client';
 import { postLogin, userQueryOptions } from '@/lib/api';
+import { signIn } from '@/lib/auth-client';
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Checkbox } from '@/components/ui/checkbox';
 import { Spinner } from '@/components/ui/spinner';
-import { FieldInfo } from '@/components/FieldInfo';
+import { FieldInfo } from '@/components/common/FieldInfo';
 
 const loginSearchSchema = z.object({
   redirect: fallback(z.string(), '/').default('/'),
@@ -72,7 +60,7 @@ function Login() {
           if (rememberMe) {
             localStorage.setItem('rememberMe', 'true');
           }
-          
+
           await queryClient.invalidateQueries({ queryKey: ['user'] });
           router.invalidate();
           await navigate({ to: search.redirect });
@@ -87,8 +75,8 @@ function Login() {
           });
         }
       } catch (error) {
-        toast.error('Login failed', { 
-          description: 'An unexpected error occurred. Please try again.' 
+        toast.error('Login failed', {
+          description: 'An unexpected error occurred. Please try again.',
         });
         form.setErrorMap({
           onSubmit: 'An unexpected error occurred. Please try again.' as any,
@@ -111,9 +99,7 @@ function Login() {
         >
           <CardHeader>
             <CardTitle className='text-center text-2xl'>Login</CardTitle>
-            <CardDescription>
-              Enter your username and password to log in
-            </CardDescription>
+            <CardDescription>Enter your username and password to log in</CardDescription>
           </CardHeader>
           <CardContent>
             <div className='grid gap-4'>
@@ -129,7 +115,7 @@ function Login() {
                       onBlur={field.handleBlur}
                       onChange={(event) => field.handleChange(event.target.value)}
                       autoFocus
-                      autoComplete="username"
+                      autoComplete='username'
                       disabled={isSubmitting}
                     />
                     <FieldInfo field={field} />
@@ -148,33 +134,30 @@ function Login() {
                       value={field.state.value}
                       onBlur={field.handleBlur}
                       onChange={(event) => field.handleChange(event.target.value)}
-                      autoComplete="current-password"
+                      autoComplete='current-password'
                       disabled={isSubmitting}
                     />
                     <FieldInfo field={field} />
                   </div>
                 )}
               />
-              
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <Checkbox 
-                    id="remember-me" 
+
+              <div className='flex items-center justify-between'>
+                <div className='flex items-center space-x-2'>
+                  <Checkbox
+                    id='remember-me'
                     checked={rememberMe}
                     onCheckedChange={(checked) => setRememberMe(checked === true)}
                     disabled={isSubmitting}
                   />
-                  <Label 
-                    htmlFor="remember-me" 
-                    className="text-sm font-normal cursor-pointer"
-                  >
+                  <Label htmlFor='remember-me' className='text-sm font-normal cursor-pointer'>
                     Remember me
                   </Label>
                 </div>
-                <button 
-                  type="button"
+                <button
+                  type='button'
                   onClick={() => toast.info('Password reset feature coming soon!')}
-                  className="text-sm text-primary hover:underline bg-transparent border-none cursor-pointer"
+                  className='text-sm text-primary hover:underline bg-transparent border-none cursor-pointer'
                 >
                   Forgot password?
                 </button>
@@ -191,18 +174,14 @@ function Login() {
                   ) : null;
                 }}
               />
-              
+
               <form.Subscribe
                 selector={(state) => [state.canSubmit]}
                 children={([canSubmit]) => (
-                  <Button 
-                    type='submit' 
-                    disabled={!canSubmit || isSubmitting} 
-                    className='w-full'
-                  >
+                  <Button type='submit' disabled={!canSubmit || isSubmitting} className='w-full'>
                     {isSubmitting ? (
-                      <div className="flex items-center gap-2">
-                        <Spinner size="sm" />
+                      <div className='flex items-center gap-2'>
+                        <Spinner size='sm' />
                         Logging in...
                       </div>
                     ) : (

@@ -8,24 +8,24 @@
 
 ## Quick Start
 
-> **Prerequisites**: You must have [Bun](https://bun.com/docs/installation) installed.
+> **Prerequisites**: You need to have [Bun](https://bun.com/docs/installation) installed.
 
-1. Setup development environment on new machine.
+1. Setup project
 
 ```sh
-bun setup
+...
 ```
 
-2. Start the server and frontend.
+2. Start the server and frontend
 
 ```sh
-bun start
+...
 ```
 
-3. Stop all services.
+3. Stop everything
 
 ```sh
-bun stop
+...
 ```
 
 ## Architecture

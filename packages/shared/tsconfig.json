@@ -1,0 +1,12 @@
+{
+    "extends": "@sartre/ts/tsconfig.base.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@sartre/shared/*": ["./*"],
+            "@/*": ["./*"]
+        }
+    },
+    "include": ["."],
+    "exclude": ["node_modules", "dist"]
+}

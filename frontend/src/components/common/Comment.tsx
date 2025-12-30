@@ -1,9 +1,5 @@
 import { useState } from 'react';
-import {
-  useQuery,
-  useQueryClient,
-  useSuspenseInfiniteQuery,
-} from '@tanstack/react-query';
+import { useQuery, useQueryClient, useSuspenseInfiniteQuery } from '@tanstack/react-query';
 
 import {
   ChevronDownIcon,
@@ -14,12 +10,11 @@ import {
 } from 'lucide-react';
 
 import { Comment as CommentType } from '@/shared/types';
-import { getCommentComments } from '@/lib/api';
-import { userQueryOptions } from '@/lib/api';
+import { getCommentComments, userQueryOptions } from '@/lib/api';
 import { useUpvoteComment } from '@/lib/api-hooks';
 import { cn, relativeTime } from '@/lib/utils';
+import { Separator } from '../ui/separator';
 import { CommentForm } from './CommentForm';
-import { Separator } from './ui/separator';
 
 type CommentProps = {
   comment: CommentType;
@@ -77,8 +72,7 @@ export function Comment({
   const { data: user } = useQuery(userQueryOptions());
   const isUpvoted = comment.commentUpvotes.length > 0;
   const isReplying = activeReplyId === comment.id;
-  const loadFirstPage =
-    comments?.pages[0].data?.length === 0 && comment.commentCount > 0;
+  const loadFirstPage = comments?.pages[0].data?.length === 0 && comment.commentCount > 0;
 
   return (
     <div
@@ -109,9 +103,7 @@ export function Comment({
           <span className='text-muted-foreground'>·</span>
           <span className='font-medium'>{comment.author.username}</span>
           <span className='text-muted-foreground'>·</span>
-          <span className='text-muted-foreground'>
-            {relativeTime(comment.createdAt)}
-          </span>
+          <span className='text-muted-foreground'>{relativeTime(comment.createdAt)}</span>
           <span className='text-muted-foreground'>·</span>
           <button
             className='text-muted-foreground hover:text-foreground'
@@ -124,7 +116,7 @@ export function Comment({
           <>
             <p className='mb-2 text-sm text-foreground'>{comment.content}</p>
             <div className='flex items-center space-x-1 text-xs text-muted-foreground'>
-                             {user && (
+              {user && (
                 <button
                   className='flex items-center space-x-1 hover:text-foreground'
                   onClick={() => setActiveReplyId(isReplying ? null : comment.id)}
@@ -136,11 +128,7 @@ export function Comment({
             </div>
             {isReplying && (
               <div className='mt-2'>
-                <CommentForm
-                  id={comment.id}
-                  isParent
-                  onSuccess={() => setActiveReplyId(null)}
-                />
+                <CommentForm id={comment.id} isParent onSuccess={() => setActiveReplyId(null)} />
               </div>
             )}
           </>

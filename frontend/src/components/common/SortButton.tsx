@@ -4,14 +4,8 @@ import { ArrowUpIcon } from 'lucide-react';
 
 import { Order, SortBy } from '@/shared/types';
 import { cn } from '@/lib/utils';
-import { Button } from './ui/button';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from './ui/select';
+import { Button } from '../ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 
 export function SortButton({ sortBy, order }: { sortBy: SortBy; order: Order }) {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import { createRouter, RouterProvider } from '@tanstack/react-router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { createAuthClient } from 'better-auth/react';
 
+import { createAuthClient } from 'better-auth/react';
 import ReactDOM from 'react-dom/client';
 
 import { routeTree } from './routeTree.gen';
@@ -10,8 +10,8 @@ import './globals.css';
 
 import { Loader2Icon } from 'lucide-react';
 
-import { ErrorInfo } from './components/ErrorInfo';
-import { NotFound } from './components/NotFound';
+import { ErrorInfo } from './components/common/ErrorInfo';
+import { NotFound } from './components/common/NotFound';
 
 const queryClient = new QueryClient();
 

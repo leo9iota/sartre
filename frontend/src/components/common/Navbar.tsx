@@ -6,7 +6,7 @@ import { MenuIcon } from 'lucide-react';
 
 import { userQueryOptions } from '@/lib/api';
 import { useLogout } from '@/lib/api-hooks';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 import {
   Sheet,
   SheetContent,
@@ -14,7 +14,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from './ui/sheet';
+} from '../ui/sheet';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

@@ -2,14 +2,14 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { createRouter, RouterProvider } from '@tanstack/react-router';
 import ReactDOM from 'react-dom/client';
 
-import { routeTree } from './routeTree.gen';
+import { routeTree } from '@/routeTree.gen';
 
 import './globals.css';
 
 import { Loader2Icon } from 'lucide-react';
 
-import { ErrorInfo } from './components/common/error-info';
-import { NotFound } from './components/common/not-found';
+import { Error } from '@/common/error';
+import { NotFound } from '@/common/not-found';
 
 const queryClient = new QueryClient();
 
@@ -22,11 +22,11 @@ const router = createRouter({
   defaultPendingComponent: () => (
     <div className='mx-auto mt-8 flex flex-col items-center justify-center'>
       <Loader2Icon className='animate-spin' />
-      <p className='mt-2 text-sm text-muted-foreground'>Loading...</p>
+      <p className='mt-2 text-sm text-muted-foreground'>Loading page</p>
     </div>
   ),
   defaultNotFoundComponent: NotFound,
-  defaultErrorComponent: ({ error }) => <ErrorInfo error={error} />
+  defaultErrorComponent: ({ error }) => <Error error={error} />
 });
 
 // Register things for type safety

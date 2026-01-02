@@ -9,7 +9,8 @@ export default defineConfig({
     vite: {
         resolve: {
             alias: {
-                '@': resolve(import.meta.dirname, './src')
+                '@': resolve(import.meta.dirname, './src'),
+                '@styled-system': resolve(import.meta.dirname, './styled-system')
             }
         }
     }

@@ -25,8 +25,16 @@ export default defineConfig(
             ]
         }
     },
+
     {
-        ignores: ['dist/**', '.output/**', '.vinxi/**', 'node_modules/**', 'eslint.config.mjs']
+        ignores: [
+            'dist/**',
+            '.output/**',
+            '.vinxi/**',
+            'node_modules/**',
+            'eslint.config.mjs',
+            'styled-system/**'
+        ]
     },
     prettier
 );

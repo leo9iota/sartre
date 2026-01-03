@@ -1,12 +1,16 @@
-import { createMemo, mergeProps, Show, splitProps, type ComponentProps, type JSX } from 'solid-js';
+import { createMemo, mergeProps, Show, splitProps } from 'solid-js';
+import type { ComponentProps, JSX } from 'solid-js';
+
+import { styled } from '@styled-system/jsx';
+import { button } from '@styled-system/recipes';
+import type { ButtonVariantProps } from '@styled-system/recipes';
 
 import { ark } from '@ark-ui/solid/factory';
 import { createContext } from '@ark-ui/solid/utils';
-import { styled } from 'styled-system/jsx';
-import { button, type ButtonVariantProps } from 'styled-system/recipes';
 
-import { Group, type GroupProps } from './group';
-import { Loader } from './loader';
+import { Group } from '@ui/group';
+import { Loader } from '@ui/loader';
+import type { GroupProps } from '@ui/group';
 
 interface ButtonLoadingProps {
   /**

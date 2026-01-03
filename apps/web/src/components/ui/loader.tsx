@@ -1,6 +1,8 @@
-import { Show, splitProps, type JSX } from 'solid-js';
+import { Show, splitProps } from 'solid-js';
+import type { JSX } from 'solid-js';
 
-import { styled, type HTMLStyledProps } from 'styled-system/jsx';
+import { styled } from '@styled-system/jsx';
+import type { HTMLStyledProps } from '@styled-system/jsx';
 
 import { AbsoluteCenter } from './absolute-center';
 import { Spinner } from './spinner';

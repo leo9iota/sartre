@@ -1,6 +1,7 @@
 import { For, Show, Suspense } from 'solid-js';
 
-import { createAsync, type RouteDefinition } from '@solidjs/router';
+import { createAsync } from '@solidjs/router';
+import type { RouteDefinition } from '@solidjs/router';
 
 import { getPosts } from '@/lib/api/posts';
 

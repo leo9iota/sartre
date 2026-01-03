@@ -8,9 +8,9 @@ import type { ButtonVariantProps } from '@styled-system/recipes';
 import { ark } from '@ark-ui/solid/factory';
 import { createContext } from '@ark-ui/solid/utils';
 
-import { Group } from '@ui/group';
-import { Loader } from '@ui/loader';
-import type { GroupProps } from '@ui/group';
+import { Group } from '@/components/ui/group';
+import { Loader } from '@/components/ui/loader';
+import type { GroupProps } from '@/components/ui/group';
 
 interface ButtonLoadingProps {
   /**

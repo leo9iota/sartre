@@ -12,8 +12,8 @@
         "ui:gen": "panda codegen"
     },
     "dependencies": {
-        "@ark-ui/solid": "^5.30.0",
         "@elysiajs/eden": "^1.4.6",
+        "@kobalte/core": "^0.13.11",
         "@solidjs/meta": "^0.29.4",
         "@solidjs/router": "^0.15.4",
         "@solidjs/start": "^1.2.1",
@@ -25,11 +25,11 @@
     "devDependencies": {
         "@eslint/js": "^9.0.0",
         "@ianvs/prettier-plugin-sort-imports": "^4.0.0",
-        "@pandacss/dev": "^1.7.2",
-        "@park-ui/cli": "^1.0.1",
-        "@park-ui/panda-preset": "^0.43.1",
         "@sartre/server": "workspace:*",
         "@types/node": "^25.0.3",
+        "@vanilla-extract/css": "^1.18.0",
+        "@vanilla-extract/recipes": "^0.5.7",
+        "@vanilla-extract/vite-plugin": "^5.1.4",
         "elysia": "1.4.19",
         "eslint": "^9.0.0",
         "eslint-config-prettier": "^10.0.0",

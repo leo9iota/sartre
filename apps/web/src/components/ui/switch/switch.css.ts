@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { vars } from '../../styles/vars.css';
+import { vars } from '../../../styles/vars.css';
 
 export const switchRoot = style({
     display: 'inline-flex',

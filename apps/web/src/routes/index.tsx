@@ -3,8 +3,8 @@ import { For, Show, Suspense } from 'solid-js';
 import { createAsync } from '@solidjs/router';
 import type { RouteDefinition } from '@solidjs/router';
 
-import { Button } from '@/components/ui/button';
-import { Switch } from '@/components/ui/switch';
+import { Button } from '@/components/ui/button/button';
+import { Switch } from '@/components/ui/switch/switch';
 
 import { getPosts } from '@/lib/api/posts';
 

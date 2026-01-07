@@ -4,7 +4,8 @@ import { createAsync } from '@solidjs/router';
 import type { RouteDefinition } from '@solidjs/router';
 
 import { Button } from '@/components/ui/button/button';
-import { Switch } from '@/components/ui/switch/switch';
+import { Switch } from '@/components/ui/switch';
+import { Text } from '@/components/ui/text';
 
 import { getPosts } from '@/lib/api/posts';
 
@@ -20,10 +21,12 @@ export default function Home() {
 
   return (
     <main class={styles.main}>
-      <h1 class={styles.title}>Sartre Blog</h1>
+      <Text variant='h1' class={styles.title}>
+        Sartre Blog
+      </Text>
 
       <div class={styles.section}>
-        <h2 class={styles.sectionTitle}>Interactive Components</h2>
+        <Text variant='h2'>Interactive Components</Text>
 
         <div class={styles.flexRow}>
           <Button onClick={() => alert('Button Clicked!')}>Primary Button</Button>
@@ -32,25 +35,30 @@ export default function Home() {
         </div>
 
         <div class={styles.flexRow}>
-          <span class={styles.label}>Toggle Feature</span>
+          <Text variant='label'>Toggle Feature</Text>
           <Switch defaultChecked />
         </div>
       </div>
+
       <div class={styles.postGrid}>
-        <h2 class={styles.sectionTitle}>Latest Posts</h2>
-        <Suspense fallback={<div>Loading posts...</div>}>
-          <Show when={posts()} fallback={<div>No posts found.</div>}>
+        <Text variant='h2'>Latest Posts</Text>
+        <Suspense fallback={<Text color='muted'>Loading posts...</Text>}>
+          <Show when={posts()} fallback={<Text color='muted'>No posts found.</Text>}>
             {postList => (
               <div class={styles.postGrid}>
                 <For each={postList()}>
                   {post => (
                     <article class={styles.postCard}>
                       <a href={`/posts/${post.slug}`} class={styles.postLink}>
-                        <h3 class={styles.postTitle}>{post.title}</h3>
-                        <p class={styles.postSnippet}>{post.content}</p>
-                        <div class={styles.postDate}>
+                        <Text variant='h4' class={styles.postTitle}>
+                          {post.title}
+                        </Text>
+                        <Text variant='body-sm' color='muted' class={styles.postSnippet}>
+                          {post.content}
+                        </Text>
+                        <Text variant='caption' class={styles.postDate}>
                           {new Date(post.createdAt).toLocaleDateString()}
-                        </div>
+                        </Text>
                       </a>
                     </article>
                   )}

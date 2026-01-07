@@ -3,15 +3,13 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '../styles/vars.css';
 
 export const main = style({
-    maxWidth: '72rem', // 6xl
+    maxWidth: '72rem',
     marginLeft: 'auto',
     marginRight: 'auto',
     padding: vars.space[4]
 });
 
 export const title = style({
-    fontSize: vars.fontSizes['4xl'],
-    fontWeight: vars.fontWeights.bold,
     marginBottom: vars.space[8]
 });
 
@@ -22,26 +20,16 @@ export const section = style({
     borderStyle: 'solid',
     borderColor: vars.colors.border,
     borderRadius: vars.radii.lg,
-    backgroundColor: vars.colors.muted,
+    backgroundColor: vars.colors.backgroundAlt,
     display: 'flex',
     flexDirection: 'column',
     gap: vars.space[6]
-});
-
-export const sectionTitle = style({
-    fontSize: vars.fontSizes['2xl'],
-    fontWeight: vars.fontWeights.bold,
-    marginBottom: vars.space[4]
 });
 
 export const flexRow = style({
     display: 'flex',
     gap: vars.space[4],
     alignItems: 'center'
-});
-
-export const label = style({
-    fontWeight: vars.fontWeights.medium
 });
 
 export const postGrid = style({
@@ -69,13 +57,10 @@ export const postLink = style({
 });
 
 export const postTitle = style({
-    fontSize: vars.fontSizes.xl,
-    fontWeight: vars.fontWeights.semibold,
     marginBottom: vars.space[2]
 });
 
 export const postSnippet = style({
-    color: vars.colors.mutedForeground,
     display: '-webkit-box',
     WebkitLineClamp: 3,
     WebkitBoxOrient: 'vertical',
@@ -83,7 +68,5 @@ export const postSnippet = style({
 });
 
 export const postDate = style({
-    marginTop: vars.space[2],
-    fontSize: vars.fontSizes.sm,
-    color: vars.colors.mutedForeground
+    marginTop: vars.space[2]
 });

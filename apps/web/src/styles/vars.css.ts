@@ -1,17 +1,9 @@
-import { createGlobalTheme } from '@vanilla-extract/css';
+import { createGlobalTheme, createThemeContract } from '@vanilla-extract/css';
 
-export const vars = createGlobalTheme(':root', {
-    colors: {
-        background: '#ffffff',
-        foreground: '#09090b',
-        primary: '#18181b', // zinc-950
-        primaryForeground: '#fafafa', // zinc-50
-        muted: '#f4f4f5', // zinc-100
-        mutedForeground: '#71717a', // zinc-500
-        accent: '#f4f4f5', // zinc-100
-        accentForeground: '#18181b', // zinc-950
-        border: '#e4e4e7' // zinc-200
-    },
+/**
+ * Static tokens that don't change with theme
+ */
+export const staticVars = createGlobalTheme(':root', {
     space: {
         1: '0.25rem',
         2: '0.5rem',
@@ -45,5 +37,36 @@ export const vars = createGlobalTheme(':root', {
         md: '0.375rem',
         lg: '0.5rem',
         full: '9999px'
+    },
+    fonts: {
+        // Monospaced headings for that "spec document" feel
+        heading: "'Space Mono', monospace",
+        body: "'Inter', system-ui, sans-serif",
+        mono: "'Space Mono', monospace"
     }
 });
+
+/**
+ * Color tokens that change with theme (light/dark)
+ * These are defined as a contract and filled by theme classes
+ */
+export const colorVars = createThemeContract({
+    background: null,
+    backgroundAlt: null,
+    foreground: null,
+    foregroundMuted: null,
+    primary: null,
+    primaryHover: null,
+    accent: null,
+    border: null,
+    borderStrong: null
+});
+
+/**
+ * Convenience export combining static and themeable tokens
+ * Use this throughout the app for consistent access
+ */
+export const vars = {
+    ...staticVars,
+    colors: colorVars
+};

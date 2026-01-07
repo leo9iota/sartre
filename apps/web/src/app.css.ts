@@ -4,9 +4,10 @@ import { vars } from './styles/vars.css';
 
 export const nav = style({
     display: 'flex',
+    alignItems: 'center',
     gap: vars.space[4],
     padding: vars.space[4],
-    backgroundColor: vars.colors.muted,
+    backgroundColor: vars.colors.backgroundAlt,
     borderBottomWidth: '1px',
     borderBottomStyle: 'solid',
     borderBottomColor: vars.colors.border
@@ -14,11 +15,25 @@ export const nav = style({
 
 export const navLink = style({
     color: vars.colors.foreground,
+    fontFamily: vars.fonts.mono,
+    fontSize: vars.fontSizes.sm,
     fontWeight: vars.fontWeights.medium,
     textDecoration: 'none',
+    transition: 'color 0.15s ease',
     selectors: {
         '&:hover': {
-            color: vars.colors.mutedForeground
+            color: vars.colors.foregroundMuted
         }
     }
+});
+
+export const navSpacer = style({
+    flex: 1
+});
+
+export const themeWrapper = style({
+    minHeight: '100vh',
+    backgroundColor: vars.colors.background,
+    color: vars.colors.foreground,
+    transition: 'background-color 0.2s ease, color 0.2s ease'
 });

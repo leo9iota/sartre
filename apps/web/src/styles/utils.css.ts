@@ -28,6 +28,8 @@ export const visuallyHidden = {
     borderWidth: 0
 } as const satisfies StyleRule;
 
+export const srOnly = visuallyHidden;
+
 /**
  * Text truncation with ellipsis
  */

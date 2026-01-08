@@ -7,15 +7,15 @@ import { colorVars } from './vars.css';
  * Inspired by markdown documents and paper aesthetic
  */
 export const lightTheme = createTheme(colorVars, {
-    background: '#F5F3EF', // Warm cream paper
-    backgroundAlt: '#EBE8E2', // Slightly darker for cards/sections
+    background: '#f8f7ea', // Warm cream paper
+    backgroundAlt: '#ede9da', // Slightly darker for cards/sections
     foreground: '#1A1A1A', // Near-black for maximum readability
     foregroundMuted: '#6B6B6B', // Secondary text (metadata, dates)
     primary: '#2C2C2C', // Primary actions, links
     primaryHover: '#1A1A1A', // Darker on hover
     accent: '#8B4513', // Warm brown accent (subtle)
-    border: '#D4D0C8', // Soft warm gray border
-    borderStrong: '#B8B4AC', // Stronger emphasis border
+    border: '#e0dac9', // Soft warm gray border
+    borderStrong: '#c8bca8', // Stronger emphasis border
     // Semantic state colors
     error: '#DC2626',
     errorMuted: '#FEE2E2',

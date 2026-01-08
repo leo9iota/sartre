@@ -14,7 +14,15 @@ export const staticVars = createGlobalTheme(':root', {
         8: '2rem',
         10: '2.5rem',
         12: '3rem',
-        16: '4rem'
+        14: '3.5rem',
+        16: '4rem',
+        20: '5rem',
+        24: '6rem',
+        32: '8rem',
+        40: '10rem',
+        48: '12rem',
+        56: '14rem',
+        64: '16rem'
     },
     fontSizes: {
         xs: '0.75rem',
@@ -36,6 +44,9 @@ export const staticVars = createGlobalTheme(':root', {
         sm: '0.125rem',
         md: '0.375rem',
         lg: '0.5rem',
+        xl: '0.75rem',
+        '2xl': '1rem',
+        '3xl': '1.5rem',
         full: '9999px'
     },
     fonts: {
@@ -69,7 +80,11 @@ export const staticVars = createGlobalTheme(':root', {
         sm: '0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)',
         md: '0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06)',
         lg: '0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05)',
-        xl: '0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04)'
+        xl: '0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04)',
+        // New tokens
+        inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+        outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
+        none: 'none'
     }
 });
 

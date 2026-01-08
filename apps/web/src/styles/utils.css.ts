@@ -7,9 +7,11 @@ import { vars } from './vars.css';
  * Apply to :focus-visible pseudo-selector
  */
 export const focusRing = {
-    outline: `2px solid ${vars.colors.ring}`,
-    outlineOffset: '4px',
-    boxShadow: 'none'
+    outline: 'none',
+    boxShadow: `
+        0 0 6px 3px ${vars.colors.ringGlow},
+        0 0 12px 6px color-mix(in srgb, ${vars.colors.ringGlow} 50%, transparent)
+    `
 } as const satisfies StyleRule;
 
 /**

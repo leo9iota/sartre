@@ -111,6 +111,7 @@ export const colorVars = createThemeContract({
     warningMuted: null,
     // UI-specific
     ring: null,
+    ringGlow: null,
     overlay: null
 });
 

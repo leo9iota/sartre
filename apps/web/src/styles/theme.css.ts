@@ -24,7 +24,8 @@ export const lightTheme = createTheme(colorVars, {
     warning: '#CA8A04',
     warningMuted: '#FEF9C3',
     // UI-specific
-    ring: '#2C2C2C',
+    ring: 'rgba(210, 190, 160, 0.6)',
+    ringGlow: 'rgba(210, 190, 160, 0.25)',
     overlay: 'rgba(0, 0, 0, 0.5)'
 });
 
@@ -50,6 +51,7 @@ export const darkTheme = createTheme(colorVars, {
     warning: '#EAB308',
     warningMuted: '#713F12',
     // UI-specific
-    ring: '#E5E5E7',
+    ring: 'rgba(210, 190, 160, 0.5)',
+    ringGlow: 'rgba(210, 190, 160, 0.2)',
     overlay: 'rgba(0, 0, 0, 0.7)'
 });

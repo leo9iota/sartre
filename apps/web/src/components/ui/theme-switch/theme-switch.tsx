@@ -2,6 +2,7 @@ import { createSignal, splitProps } from 'solid-js';
 import type { ParentProps } from 'solid-js';
 
 import { Switch as ArkSwitch } from '@ark-ui/solid/switch';
+import { Moon, Sun } from 'lucide-solid';
 
 import { useTheme } from '../../../lib/theme/theme-context';
 import * as styles from './theme-switch.css';
@@ -25,8 +26,6 @@ export const ThemeSwitch = (props: ThemeSwitchProps) => {
   const [isPressed, setIsPressed] = createSignal(false);
   const { theme, toggleTheme } = useTheme();
 
-  const showLabel = () => local.showLabel !== false;
-
   return (
     <ArkSwitch.Root
       class={`${styles.switchRoot} ${local.class ?? ''}`}
@@ -40,13 +39,11 @@ export const ThemeSwitch = (props: ThemeSwitchProps) => {
     >
       <ArkSwitch.HiddenInput class={styles.switchInput} />
       <ArkSwitch.Control class={styles.switchControl}>
-        <ArkSwitch.Thumb class={styles.switchThumb} />
+        <ArkSwitch.Thumb class={styles.switchThumb}>
+          <Sun class={`${styles.switchIcon} sun`} />
+          <Moon class={`${styles.switchIcon} moon`} />
+        </ArkSwitch.Thumb>
       </ArkSwitch.Control>
-      {showLabel() && (
-        <ArkSwitch.Label class={styles.switchLabel}>
-          {theme() === 'dark' ? '🌙' : '☀️'}
-        </ArkSwitch.Label>
-      )}
       {local.children && (
         <ArkSwitch.Label class={styles.switchLabel}>{local.children}</ArkSwitch.Label>
       )}

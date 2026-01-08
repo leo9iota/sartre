@@ -22,7 +22,7 @@ export const Pagination = (props: PaginationProps) => {
       </ArkPagination.PrevTrigger>
       <ArkPagination.Context>
         {context => (
-          <For each={context.pages}>
+          <For each={context().pages}>
             {page =>
               page.type === 'ellipsis' ? (
                 <div class={styles.paginationEllipsis}>...</div>

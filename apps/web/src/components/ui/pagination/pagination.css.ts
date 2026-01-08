@@ -51,7 +51,7 @@ export const paginationEllipsis = style({
     justifyContent: 'center',
     height: '2.5rem',
     width: '2.5rem',
-    color: vars.colors.foreground
+    color: vars.colors.foregroundMuted
 });
 
 export const paginationTrigger = style([

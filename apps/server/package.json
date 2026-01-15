@@ -19,16 +19,16 @@
         "drizzle-kit": "^0.31.8",
         "eslint": "^9.0.0",
         "eslint-config-prettier": "^10.0.0",
-        "typescript-eslint": "^8.0.0"
+        "typescript-eslint": "^8.53.0"
     },
     "peerDependencies": {
         "typescript": "^5"
     },
     "dependencies": {
         "@elysiajs/cors": "^1.4.1",
-        "@libsql/client": "^0.15.15",
-        "better-auth": "^1.4.10",
+        "@libsql/client": "^0.17.0",
+        "better-auth": "^1.4.13",
         "drizzle-orm": "^0.45.1",
-        "elysia": "^1.4.19"
+        "elysia": "^1.4.22"
     }
 }

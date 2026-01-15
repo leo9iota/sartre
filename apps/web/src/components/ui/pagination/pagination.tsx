@@ -1,43 +1,25 @@
-import { For, splitProps } from 'solid-js';
-
 import { Pagination as ArkPagination } from '@ark-ui/solid/pagination';
-import { ChevronLeft, ChevronRight } from 'lucide-solid';
 
 import * as styles from './pagination.css';
 
-export interface PaginationProps extends ArkPagination.RootProps {
-  class?: string;
-}
+export const PaginationRoot = (props: ArkPagination.RootProps) => (
+  <ArkPagination.Root class={styles.paginationRoot} {...props} />
+);
 
-/**
- * Pagination component for navigating through pages of data.
- */
-export const Pagination = (props: PaginationProps) => {
-  const [local, rest] = splitProps(props, ['class']);
+export const PaginationPrevTrigger = (props: ArkPagination.PrevTriggerProps) => (
+  <ArkPagination.PrevTrigger class={styles.paginationTrigger} {...props} />
+);
 
-  return (
-    <ArkPagination.Root class={`${styles.paginationRoot} ${local.class ?? ''}`} {...rest}>
-      <ArkPagination.PrevTrigger class={styles.paginationTrigger}>
-        <ChevronLeft />
-      </ArkPagination.PrevTrigger>
-      <ArkPagination.Context>
-        {context => (
-          <For each={context().pages}>
-            {page =>
-              page.type === 'ellipsis' ? (
-                <div class={styles.paginationEllipsis}>...</div>
-              ) : (
-                <ArkPagination.Item class={styles.paginationItem} {...page}>
-                  {page.value}
-                </ArkPagination.Item>
-              )
-            }
-          </For>
-        )}
-      </ArkPagination.Context>
-      <ArkPagination.NextTrigger class={styles.paginationTrigger}>
-        <ChevronRight />
-      </ArkPagination.NextTrigger>
-    </ArkPagination.Root>
-  );
-};
+export const PaginationNextTrigger = (props: ArkPagination.NextTriggerProps) => (
+  <ArkPagination.NextTrigger class={styles.paginationTrigger} {...props} />
+);
+
+export const PaginationItem = (props: ArkPagination.ItemProps) => (
+  <ArkPagination.Item class={styles.paginationItem} {...props} />
+);
+
+export const PaginationEllipsis = (props: { class?: string }) => (
+  <div class={`${styles.paginationEllipsis} ${props.class ?? ''}`}>...</div>
+);
+
+export const PaginationContext = ArkPagination.Context;

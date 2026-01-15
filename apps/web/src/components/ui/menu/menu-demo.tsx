@@ -1,4 +1,5 @@
 import {
+  ChevronRight,
   CirclePlusIcon,
   CreditCardIcon,
   LogOutIcon,
@@ -10,99 +11,79 @@ import {
 } from 'lucide-solid';
 
 import { Button } from '../button/button';
-import { Menu } from './menu';
-import type { MenuItemData } from './menu';
+import {
+  MenuContent,
+  MenuItem,
+  MenuItemGroup,
+  MenuItemGroupLabel,
+  MenuPositioner,
+  MenuRoot,
+  MenuSeparator,
+  MenuTrigger,
+  MenuTriggerItem
+} from './menu';
 
 export const MenuDemo = () => {
-  const menuItems: MenuItemData[] = [
-    {
-      id: 'account-group',
-      type: 'group',
-      label: 'My Account',
-      children: [
-        { type: 'separator', id: 'sep-1' },
-        {
-          id: 'profile',
-          label: (
-            <>
+  return (
+    <MenuRoot>
+      <MenuTrigger>
+        <Button variant='outline'>Open Menu</Button>
+      </MenuTrigger>
+      <MenuPositioner>
+        <MenuContent>
+          <MenuItemGroup>
+            <MenuItemGroupLabel>My Account</MenuItemGroupLabel>
+            <MenuSeparator />
+            <MenuItem value='profile'>
               <UserIcon />
               Profile
               <span style={{ 'margin-left': 'auto', 'font-size': '0.75rem', opacity: 0.6 }}>
                 ⇧⌘P
               </span>
-            </>
-          )
-        },
-        {
-          id: 'billing',
-          label: (
-            <>
+            </MenuItem>
+            <MenuItem value='billing'>
               <CreditCardIcon /> Billing
-            </>
-          )
-        },
-        {
-          id: 'settings',
-          label: (
-            <>
+            </MenuItem>
+            <MenuItem value='settings'>
               <SettingsIcon /> Settings
               <span style={{ 'margin-left': 'auto', 'font-size': '0.75rem', opacity: 0.6 }}>
                 ⌘,
               </span>
-            </>
-          )
-        },
-        // Nested Menu
-        {
-          id: 'invite',
-          label: (
-            <>
-              <UserPlusIcon />
-              Invite member
-            </>
-          ),
-          children: [
-            {
-              id: 'email',
-              label: (
-                <>
-                  <MailIcon /> Email
-                </>
-              )
-            },
-            {
-              id: 'message',
-              label: (
-                <>
-                  <MessageSquareIcon /> Message
-                </>
-              )
-            },
-            { type: 'separator', id: 'sep-nested' },
-            {
-              id: 'other',
-              label: (
-                <>
-                  <CirclePlusIcon />
-                  More Options...
-                </>
-              )
-            }
-          ]
-        },
-        { type: 'separator', id: 'sep-2' },
-        {
-          id: 'logout',
-          label: (
-            <>
-              <LogOutIcon />
-              Logout
-            </>
-          )
-        }
-      ]
-    }
-  ];
+            </MenuItem>
 
-  return <Menu trigger={<Button variant='outline'>Open Menu</Button>} items={menuItems} />;
+            {/* Nested Menu */}
+            <MenuRoot positioning={{ placement: 'right-start', gutter: 4 }}>
+              <MenuTriggerItem>
+                <UserPlusIcon />
+                Invite member
+                <ChevronRight style={{ 'margin-left': 'auto', width: '1rem', height: '1rem' }} />
+              </MenuTriggerItem>
+              <MenuPositioner>
+                <MenuContent>
+                  <MenuItem value='email'>
+                    <MailIcon /> Email
+                  </MenuItem>
+                  <MenuItem value='message'>
+                    <MessageSquareIcon /> Message
+                  </MenuItem>
+                  <MenuSeparator />
+                  <MenuItem value='other'>
+                    <CirclePlusIcon />
+                    More Options...
+                  </MenuItem>
+                </MenuContent>
+              </MenuPositioner>
+            </MenuRoot>
+          </MenuItemGroup>
+
+          <MenuSeparator />
+
+          <MenuItem value='logout'>
+            <LogOutIcon />
+            Logout
+          </MenuItem>
+        </MenuContent>
+      </MenuPositioner>
+    </MenuRoot>
+  );
 };

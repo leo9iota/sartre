@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button/button';
 import { ThemeSwitch } from '@/components/ui/theme-switch';
 
 import * as styles from './header.css';
@@ -18,7 +19,19 @@ export function Header() {
           </a>
         </nav>
         <div class={styles.spacer} />
-        <ThemeSwitch />
+        <div class={styles.actions}>
+          <a href='/sign-in'>
+            <Button variant='ghost' size='sm'>
+              Sign In
+            </Button>
+          </a>
+          <a href='/sign-up'>
+            <Button variant='solid' size='sm'>
+              Sign Up
+            </Button>
+          </a>
+          <ThemeSwitch />
+        </div>
       </div>
     </header>
   );

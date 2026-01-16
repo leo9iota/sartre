@@ -46,3 +46,9 @@ export const navLink = style({
 export const spacer = style({
     flex: 1
 });
+
+export const actions = style({
+    display: 'flex',
+    alignItems: 'center',
+    gap: vars.space[3]
+});

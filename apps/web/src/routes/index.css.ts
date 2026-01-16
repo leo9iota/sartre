@@ -4,9 +4,13 @@ import { vars } from '../styles/vars.css';
 
 export const main = style({
     maxWidth: '72rem',
+    width: '100%',
     marginLeft: 'auto',
     marginRight: 'auto',
-    padding: vars.space[4]
+    paddingLeft: vars.space[4],
+    paddingRight: vars.space[4],
+    paddingTop: vars.space[4],
+    paddingBottom: vars.space[4]
 });
 
 export const title = style({

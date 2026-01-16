@@ -70,7 +70,7 @@ export const buttonRecipe = recipe({
                 backgroundColor: 'transparent',
                 color: vars.colors.foreground,
                 ':hover': {
-                    backgroundColor: vars.colors.backgroundAlt
+                    backgroundColor: vars.colors.ghostHover
                 }
             },
             link: {

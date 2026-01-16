@@ -4,7 +4,8 @@ import { staticVars, vars } from '../../../styles/vars.css';
 
 export const authContainer = style({
     display: 'flex',
-    minHeight: '100vh',
+    flex: 1,
+    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     padding: staticVars.space[4],

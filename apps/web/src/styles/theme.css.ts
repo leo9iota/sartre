@@ -26,7 +26,8 @@ export const lightTheme = createTheme(colorVars, {
     // UI-specific
     ring: 'rgba(210, 190, 160, 0.6)',
     ringGlow: 'rgba(210, 190, 160, 0.25)',
-    overlay: 'rgba(0, 0, 0, 0.5)'
+    overlay: 'rgba(0, 0, 0, 0.5)',
+    ghostHover: 'rgba(0, 0, 0, 0.06)'
 });
 
 /**
@@ -42,7 +43,7 @@ export const darkTheme = createTheme(colorVars, {
     primaryHover: '#FFFFFF', // Brighter on hover
     accent: '#D4A574', // Warm gold accent
     border: '#3A3A3C', // Subtle dark border
-    borderStrong: '#48484A', // Stronger border
+    borderStrong: '#c8bca8', // Stronger border
     // Semantic state colors
     error: '#EF4444',
     errorMuted: '#7F1D1D',
@@ -53,5 +54,6 @@ export const darkTheme = createTheme(colorVars, {
     // UI-specific
     ring: 'rgba(210, 190, 160, 0.5)',
     ringGlow: 'rgba(210, 190, 160, 0.2)',
-    overlay: 'rgba(0, 0, 0, 0.7)'
+    overlay: 'rgba(0, 0, 0, 0.7)',
+    ghostHover: 'rgba(255, 255, 255, 0.08)'
 });

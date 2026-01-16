@@ -112,7 +112,8 @@ export const colorVars = createThemeContract({
     // UI-specific
     ring: null,
     ringGlow: null,
-    overlay: null
+    overlay: null,
+    ghostHover: null
 });
 
 /**

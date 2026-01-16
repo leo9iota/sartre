@@ -16,7 +16,7 @@ export const inputRecipe = recipe({
         transition: `all ${vars.transitions.fast} ${vars.easings.default}`,
         selectors: {
             '&:focus-visible': {
-                borderColor: vars.colors.primary,
+                borderColor: vars.colors.borderStrong,
                 ...focusRing
             },
             '&:disabled': {

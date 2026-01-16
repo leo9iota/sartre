@@ -17,7 +17,7 @@ export const container = style({
     marginRight: 'auto',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     paddingTop: vars.space[4],
     paddingBottom: vars.space[4],
     paddingLeft: vars.space[4],

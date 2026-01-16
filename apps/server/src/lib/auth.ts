@@ -18,5 +18,15 @@ export const auth = betterAuth({
             clientId: process.env.GOOGLE_CLIENT_ID!,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET!
         }
+    },
+    // IMPORTANT! Remove in prod.
+    logger: {
+        level: 'debug'
+    },
+    advanced: {
+        //  IMPORTANT! This is necessary ensuring authentication works on localhost. Set to 'true' in prod.
+        defaultCookieAttributes: {
+            secure: false
+        }
     }
 });

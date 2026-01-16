@@ -12,7 +12,8 @@ import './styles/reset.css'; // Preflight/Reset
 import './styles/global.css'; // Import global styles
 
 import * as styles from './app.css';
-import { ThemeSwitch } from './components/ui/theme-switch';
+import { Footer } from './components/layout/footer';
+import { Header } from './components/layout/header';
 
 /**
  * Inner app content that has access to theme context
@@ -22,20 +23,11 @@ function AppContent(props: { children: JSX.Element }) {
 
   return (
     <div class={`${theme() === 'dark' ? darkTheme : lightTheme} ${styles.themeWrapper}`}>
-      <nav class={styles.nav}>
-        <a href='/' class={styles.navLink}>
-          Home
-        </a>
-        <a href='/about' class={styles.navLink}>
-          About
-        </a>
-        <a href='/design' class={styles.navLink}>
-          Design System
-        </a>
-        <div class={styles.navSpacer} />
-        <ThemeSwitch />
-      </nav>
-      <Suspense fallback={<div>Loading...</div>}>{props.children}</Suspense>
+      <Header />
+      <main class={styles.mainContent}>
+        <Suspense fallback={<div>Loading...</div>}>{props.children}</Suspense>
+      </main>
+      <Footer />
     </div>
   );
 }

@@ -70,3 +70,31 @@ export const authLink = style({
         textDecoration: 'underline'
     }
 });
+
+export const divider = style({
+    display: 'flex',
+    alignItems: 'center',
+    gap: staticVars.space[3],
+    marginTop: staticVars.space[6],
+    marginBottom: staticVars.space[4],
+    color: vars.colors.foregroundMuted,
+    fontSize: staticVars.fontSizes.sm,
+    '::before': {
+        content: '""',
+        flex: 1,
+        height: '1px',
+        background: vars.colors.border
+    },
+    '::after': {
+        content: '""',
+        flex: 1,
+        height: '1px',
+        background: vars.colors.border
+    }
+});
+
+export const socialButtons = style({
+    display: 'flex',
+    flexDirection: 'column',
+    gap: staticVars.space[3]
+});

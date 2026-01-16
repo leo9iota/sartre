@@ -4,6 +4,7 @@ import { A, useNavigate } from '@solidjs/router';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { SocialButton } from '@/components/auth/social-button';
 
 import { authClient } from '@/lib/auth/auth-client';
 
@@ -78,7 +79,16 @@ export const SignIn = () => {
           </Button>
         </form>
 
-        <A href='/signup' class={styles.authLink}>
+        <div class={styles.divider}>
+          <span>or continue with</span>
+        </div>
+
+        <div class={styles.socialButtons}>
+          <SocialButton provider='github' />
+          <SocialButton provider='google' />
+        </div>
+
+        <A href='/sign-up' class={styles.authLink}>
           Don't have an account? Sign up
         </A>
       </div>

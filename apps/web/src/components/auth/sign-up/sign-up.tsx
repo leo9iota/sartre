@@ -105,9 +105,12 @@ export const SignUp = () => {
           <SocialButton provider='google' />
         </div>
 
-        <A href='/sign-in' class={styles.authLink}>
-          Already have an account? Sign in
-        </A>
+        <div class={styles.footerText}>
+          Already have an account?{' '}
+          <A href='/sign-in' class={styles.footerLink}>
+            Sign in
+          </A>
+        </div>
       </div>
     </div>
   );

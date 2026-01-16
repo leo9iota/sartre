@@ -60,14 +60,20 @@ export const errorText = style({
     color: vars.colors.error
 });
 
-export const authLink = style({
+export const footerText = style({
     fontSize: staticVars.fontSizes.sm,
+    color: vars.colors.foregroundMuted,
+    textAlign: 'center',
+    marginTop: staticVars.space[4]
+});
+
+export const footerLink = style({
     color: vars.colors.primary,
     textDecoration: 'none',
-    textAlign: 'center',
-    marginTop: staticVars.space[4],
+    fontWeight: staticVars.fontWeights.medium,
     ':hover': {
-        textDecoration: 'underline'
+        textDecoration: 'underline',
+        color: vars.colors.primaryHover
     }
 });
 

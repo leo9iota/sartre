@@ -88,9 +88,12 @@ export const SignIn = () => {
           <SocialButton provider='google' />
         </div>
 
-        <A href='/sign-up' class={styles.authLink}>
-          Don't have an account? Sign up
-        </A>
+        <div class={styles.footerText}>
+          Don't have an account?{' '}
+          <A href='/sign-up' class={styles.footerLink}>
+            Sign up
+          </A>
+        </div>
       </div>
     </div>
   );

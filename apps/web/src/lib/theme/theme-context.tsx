@@ -68,8 +68,8 @@ export function ThemeProvider(props: ParentProps) {
  */
 export function useTheme(): ThemeContextValue {
   const ctx = useContext(ThemeContext);
-  if (!ctx) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
+
+  if (!ctx) throw new Error('useTheme must be used within a ThemeProvider');
+
   return ctx;
 }

@@ -7,7 +7,7 @@ import { postsRouter } from './routes/posts';
 const app = new Elysia()
     .use(
         cors({
-            origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+            origin: process.env.CORS_ORIGIN || ['http://localhost:3000', 'http://localhost:4321'],
             methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
             credentials: true,
             allowedHeaders: ['Content-Type', 'Authorization']

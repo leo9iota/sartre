@@ -24,20 +24,20 @@ export const DialogDemo = () => {
               This is a description of the dialog content. You can add any content here including
               forms, lists, or other components.
             </DialogDescription>
-            <DialogCloseTrigger aria-label='Close dialog'>
+            <DialogCloseTrigger aria-label="Close dialog">
               <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='20'
-                height='20'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                stroke-width='2'
-                stroke-linecap='round'
-                stroke-linejoin='round'
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               >
-                <path d='M18 6 6 18' />
-                <path d='m6 6 12 12' />
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
               </svg>
             </DialogCloseTrigger>
           </DialogContent>

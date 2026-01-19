@@ -1,6 +1,7 @@
 ---
+import * as styles from '@/components/design-system-pages/design.css.ts';
+
 import MainLayout from './MainLayout.astro';
-import * as styles from '@/pages/design/design.css';
 
 const navItems = {
   foundations: [
@@ -28,10 +29,9 @@ const navItems = {
 const { pathname } = Astro.url;
 
 const isActive = (href: string) => {
-    if (href === '/design') {
-      return pathname === '/design';
-    }
-    return pathname.startsWith(href);
+  if (href === '/design') return pathname === '/design';
+
+  return pathname.startsWith(href);
 };
 ---
 
@@ -43,32 +43,36 @@ const isActive = (href: string) => {
       <nav class={styles.navGroup}>
         <div class={styles.navGroupLabel}>Foundations</div>
         <ul class={styles.navList}>
-          {navItems.foundations.map(item => (
-            <li>
-              <a href={item.href} class={styles.navItem} data-active={isActive(item.href)}>
-                {item.label}
-              </a>
-            </li>
-          ))}
+          {
+            navItems.foundations.map(item => (
+              <li>
+                <a href={item.href} class={styles.navItem} data-active={isActive(item.href)}>
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </nav>
 
       <nav class={styles.navGroup}>
         <div class={styles.navGroupLabel}>Components</div>
         <ul class={styles.navList}>
-          {navItems.components.map(item => (
-            <li>
-              <a href={item.href} class={styles.navItem} data-active={isActive(item.href)}>
-                {item.label}
-              </a>
-            </li>
-          ))}
+          {
+            navItems.components.map(item => (
+              <li>
+                <a href={item.href} class={styles.navItem} data-active={isActive(item.href)}>
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </nav>
     </aside>
 
     <main class={styles.mainContent}>
-        <slot />
+      <slot />
     </main>
   </div>
 </MainLayout>

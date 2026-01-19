@@ -1,6 +1,5 @@
-import { splitProps } from 'solid-js';
-
 import { Progress } from '@ark-ui/solid/progress';
+import { splitProps } from 'solid-js';
 
 import * as styles from './progress.css';
 

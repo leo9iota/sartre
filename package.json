@@ -20,6 +20,9 @@
         "@ianvs/prettier-plugin-sort-imports": "^4.0.0",
         "prettier": "^3.8.0",
         "turbo": "^2.7.5",
-        "typescript": "^5.0.0"
+        "typescript": "^5.9.3"
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.9.6"
     }
 }

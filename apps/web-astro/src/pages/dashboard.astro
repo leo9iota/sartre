@@ -10,11 +10,12 @@ import { DashboardClient } from '@/components/dashboard-client';
 
 import MainLayout from '@/layouts/MainLayout.astro';
 
+export const prerender = false;
+
 // Server-side Protection (Redundant with Middleware but good practice)
 const sessionToken = Astro.cookies.get('better-auth.session_token');
-if (!sessionToken?.value) {
-  return Astro.redirect('/sign-in');
-}
+
+if (!sessionToken?.value) return Astro.redirect('/sign-in');
 ---
 
 <MainLayout title="Dashboard">

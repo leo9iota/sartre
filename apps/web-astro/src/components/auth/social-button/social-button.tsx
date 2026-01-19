@@ -2,7 +2,7 @@ import { Component, createSignal, Show } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
 
 import { Spinner } from '@/components/ui/spinner';
-import { GithubIcon, GoogleIcon } from '@/components/icons';
+import { GithubIcon, GoogleIcon } from '@/components/icons/github-icon';
 
 import { authClient } from '@/lib/auth/auth-client';
 

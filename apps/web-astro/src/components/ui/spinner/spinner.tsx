@@ -50,7 +50,7 @@ export function Spinner(props: SpinnerProps) {
         size: local.size,
         color: local.color
       })} ${local.class ?? ''}`}
-      role='progressbar'
+      role="progressbar"
       aria-label={local.label ?? 'Loading'}
       {...rest}
     >
@@ -63,7 +63,7 @@ export function Spinner(props: SpinnerProps) {
           cx={SPINNER_SIZE}
           cy={SPINNER_SIZE}
           r={radius()}
-          fill='none'
+          fill="none"
           stroke-width={thickness()}
         />
       </svg>

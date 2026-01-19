@@ -1,11 +1,10 @@
 import { createSignal } from 'solid-js';
 
+import { SocialButton } from '@/components/auth/social-button';
 // import { A, useNavigate } from '@solidjs/router';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { SocialButton } from '@/components/auth/social-button';
-
 import { authClient } from '@/lib/auth/auth-client';
 
 import * as styles from './sign-in.css';
@@ -45,13 +44,13 @@ export const SignIn = () => {
 
         <form class={styles.authForm} onSubmit={handleSubmit}>
           <div class={styles.formGroup}>
-            <label class={styles.label} for='email'>
+            <label class={styles.label} for="email">
               Email
             </label>
             <Input
-              id='email'
-              type='email'
-              placeholder='you@example.com'
+              id="email"
+              type="email"
+              placeholder="you@example.com"
               value={email()}
               onInput={e => setEmail(e.currentTarget.value)}
               required
@@ -59,13 +58,13 @@ export const SignIn = () => {
           </div>
 
           <div class={styles.formGroup}>
-            <label class={styles.label} for='password'>
+            <label class={styles.label} for="password">
               Password
             </label>
             <Input
-              id='password'
-              type='password'
-              placeholder='••••••••'
+              id="password"
+              type="password"
+              placeholder="••••••••"
               value={password()}
               onInput={e => setPassword(e.currentTarget.value)}
               required
@@ -74,7 +73,7 @@ export const SignIn = () => {
 
           {error() && <p class={styles.errorText}>{error()}</p>}
 
-          <Button type='submit' variant='solid' loading={loading()}>
+          <Button type="submit" variant="solid" loading={loading()}>
             Sign In
           </Button>
         </form>
@@ -84,13 +83,13 @@ export const SignIn = () => {
         </div>
 
         <div class={styles.socialButtons}>
-          <SocialButton provider='github' />
-          <SocialButton provider='google' />
+          <SocialButton provider="github" />
+          <SocialButton provider="google" />
         </div>
 
         <div class={styles.footerText}>
           Don't have an account?{' '}
-          <a href='/sign-up' class={styles.footerLink}>
+          <a href="/sign-up" class={styles.footerLink}>
             Sign up
           </a>
         </div>

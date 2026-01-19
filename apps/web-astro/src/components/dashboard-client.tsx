@@ -1,7 +1,6 @@
-import { createEffect, Show } from 'solid-js';
+import { Show } from 'solid-js';
 
 import { Button } from '@/components/ui/button';
-
 import { authClient } from '@/lib/auth/auth-client';
 
 import * as styles from '@/pages/dashboard.css';
@@ -27,7 +26,7 @@ export function DashboardClient() {
       <div class={styles.container}>
         <div class={styles.header}>
           <h1 class={styles.title}>Dashboard</h1>
-          <Button variant='outline' onClick={handleSignOut}>
+          <Button variant="outline" onClick={handleSignOut}>
             Sign Out
           </Button>
         </div>

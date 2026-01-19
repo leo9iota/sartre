@@ -1,8 +1,7 @@
-import { Show, splitProps } from 'solid-js';
-import type { ParentProps } from 'solid-js';
-
 import { Checkbox as ArkCheckbox } from '@ark-ui/solid/checkbox';
 import { Check, Minus } from 'lucide-solid';
+import { Show, splitProps } from 'solid-js';
+import type { ParentProps } from 'solid-js';
 
 import * as styles from './checkbox.css';
 

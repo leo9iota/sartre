@@ -1,8 +1,7 @@
-import { Show, splitProps } from 'solid-js';
-import type { ParentProps } from 'solid-js';
-
 import { Clipboard as ArkClipboard } from '@ark-ui/solid/clipboard';
 import { Check, ClipboardCopy } from 'lucide-solid';
+import { Show, splitProps } from 'solid-js';
+import type { ParentProps } from 'solid-js';
 
 import * as styles from './clipboard.css';
 

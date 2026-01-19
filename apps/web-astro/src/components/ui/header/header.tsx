@@ -1,7 +1,6 @@
 import { Show } from 'solid-js';
 
 import { Button } from '@/components/ui/button/button';
-
 import { authClient } from '@/lib/auth/auth-client';
 
 import * as styles from './header.css';
@@ -28,13 +27,13 @@ export function Header(props: HeaderProps) {
     <header class={styles.header}>
       <div class={styles.container}>
         <nav class={styles.nav}>
-          <a href='/' class={styles.navLink}>
+          <a href="/" class={styles.navLink}>
             Home
           </a>
-          <a href='/about' class={styles.navLink}>
+          <a href="/about" class={styles.navLink}>
             About
           </a>
-          <a href='/design' class={styles.navLink}>
+          <a href="/design" class={styles.navLink}>
             Design System
           </a>
         </nav>
@@ -44,20 +43,20 @@ export function Header(props: HeaderProps) {
             when={props.isLoggedIn}
             fallback={
               <>
-                <a href='/sign-in'>
-                  <Button variant='ghost' size='sm'>
+                <a href="/sign-in">
+                  <Button variant="ghost" size="sm">
                     Sign In
                   </Button>
                 </a>
-                <a href='/sign-up'>
-                  <Button variant='solid' size='sm'>
+                <a href="/sign-up">
+                  <Button variant="solid" size="sm">
                     Sign Up
                   </Button>
                 </a>
               </>
             }
           >
-            <Button variant='ghost' size='sm' onClick={handleSignOut}>
+            <Button variant="ghost" size="sm" onClick={handleSignOut}>
               Sign Out
             </Button>
           </Show>

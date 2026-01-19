@@ -1,8 +1,7 @@
-import { Show, splitProps } from 'solid-js';
-import type { ComponentProps } from 'solid-js';
-
 import { Avatar as ArkAvatar } from '@ark-ui/solid/avatar';
 import { type RecipeVariants } from '@vanilla-extract/recipes';
+import { Show, splitProps } from 'solid-js';
+import type { ComponentProps } from 'solid-js';
 
 import { avatarRecipe, fallback, image } from './avatar.css';
 

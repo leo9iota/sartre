@@ -1,6 +1,6 @@
 import { splitProps } from 'solid-js';
-import { Dynamic } from 'solid-js/web';
 import type { JSX, ValidComponent } from 'solid-js';
+import { Dynamic } from 'solid-js/web';
 
 import { textRecipe } from './text.css';
 import type { TextVariants } from './text.css';

@@ -27,26 +27,38 @@ export const MenuDemo = () => {
   return (
     <MenuRoot>
       <MenuTrigger>
-        <Button variant='outline'>Open Menu</Button>
+        <Button variant="outline">Open Menu</Button>
       </MenuTrigger>
       <MenuPositioner>
         <MenuContent>
           <MenuItemGroup>
             <MenuItemGroupLabel>My Account</MenuItemGroupLabel>
             <MenuSeparator />
-            <MenuItem value='profile'>
+            <MenuItem value="profile">
               <UserIcon />
               Profile
-              <span style={{ 'margin-left': 'auto', 'font-size': '0.75rem', opacity: 0.6 }}>
+              <span
+                style={{
+                  'margin-left': 'auto',
+                  'font-size': '0.75rem',
+                  opacity: 0.6
+                }}
+              >
                 ⇧⌘P
               </span>
             </MenuItem>
-            <MenuItem value='billing'>
+            <MenuItem value="billing">
               <CreditCardIcon /> Billing
             </MenuItem>
-            <MenuItem value='settings'>
+            <MenuItem value="settings">
               <SettingsIcon /> Settings
-              <span style={{ 'margin-left': 'auto', 'font-size': '0.75rem', opacity: 0.6 }}>
+              <span
+                style={{
+                  'margin-left': 'auto',
+                  'font-size': '0.75rem',
+                  opacity: 0.6
+                }}
+              >
                 ⌘,
               </span>
             </MenuItem>
@@ -60,14 +72,14 @@ export const MenuDemo = () => {
               </MenuTriggerItem>
               <MenuPositioner>
                 <MenuContent>
-                  <MenuItem value='email'>
+                  <MenuItem value="email">
                     <MailIcon /> Email
                   </MenuItem>
-                  <MenuItem value='message'>
+                  <MenuItem value="message">
                     <MessageSquareIcon /> Message
                   </MenuItem>
                   <MenuSeparator />
-                  <MenuItem value='other'>
+                  <MenuItem value="other">
                     <CirclePlusIcon />
                     More Options...
                   </MenuItem>
@@ -78,7 +90,7 @@ export const MenuDemo = () => {
 
           <MenuSeparator />
 
-          <MenuItem value='logout'>
+          <MenuItem value="logout">
             <LogOutIcon />
             Logout
           </MenuItem>

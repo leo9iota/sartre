@@ -1,11 +1,10 @@
 import { createSignal } from 'solid-js';
 
+import { SocialButton } from '@/components/auth/social-button';
 // import { A, useNavigate } from '@solidjs/router';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { SocialButton } from '@/components/auth/social-button';
-
 import { authClient } from '@/lib/auth/auth-client';
 
 import * as styles from './sign-up.css';
@@ -47,13 +46,13 @@ export const SignUp = () => {
 
         <form class={styles.authForm} onSubmit={handleSubmit}>
           <div class={styles.formGroup}>
-            <label class={styles.label} for='name'>
+            <label class={styles.label} for="name">
               Name
             </label>
             <Input
-              id='name'
-              type='text'
-              placeholder='Your name'
+              id="name"
+              type="text"
+              placeholder="Your name"
               value={name()}
               onInput={e => setName(e.currentTarget.value)}
               required
@@ -61,13 +60,13 @@ export const SignUp = () => {
           </div>
 
           <div class={styles.formGroup}>
-            <label class={styles.label} for='email'>
+            <label class={styles.label} for="email">
               Email
             </label>
             <Input
-              id='email'
-              type='email'
-              placeholder='you@example.com'
+              id="email"
+              type="email"
+              placeholder="you@example.com"
               value={email()}
               onInput={e => setEmail(e.currentTarget.value)}
               required
@@ -75,13 +74,13 @@ export const SignUp = () => {
           </div>
 
           <div class={styles.formGroup}>
-            <label class={styles.label} for='password'>
+            <label class={styles.label} for="password">
               Password
             </label>
             <Input
-              id='password'
-              type='password'
-              placeholder='••••••••'
+              id="password"
+              type="password"
+              placeholder="••••••••"
               value={password()}
               onInput={e => setPassword(e.currentTarget.value)}
               minLength={8}
@@ -91,7 +90,7 @@ export const SignUp = () => {
 
           {error() && <p class={styles.errorText}>{error()}</p>}
 
-          <Button type='submit' variant='solid' loading={loading()}>
+          <Button type="submit" variant="solid" loading={loading()}>
             Create Account
           </Button>
         </form>
@@ -101,13 +100,13 @@ export const SignUp = () => {
         </div>
 
         <div class={styles.socialButtons}>
-          <SocialButton provider='github' />
-          <SocialButton provider='google' />
+          <SocialButton provider="github" />
+          <SocialButton provider="google" />
         </div>
 
         <div class={styles.footerText}>
           Already have an account?{' '}
-          <a href='/sign-in' class={styles.footerLink}>
+          <a href="/sign-in" class={styles.footerLink}>
             Sign in
           </a>
         </div>

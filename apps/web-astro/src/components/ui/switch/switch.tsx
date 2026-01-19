@@ -1,7 +1,6 @@
+import { Switch as ArkSwitch } from '@ark-ui/solid/switch';
 import { createSignal, splitProps } from 'solid-js';
 import type { ParentProps } from 'solid-js';
-
-import { Switch as ArkSwitch } from '@ark-ui/solid/switch';
 
 import * as styles from './switch.css';
 

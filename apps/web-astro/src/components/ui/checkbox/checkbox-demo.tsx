@@ -7,15 +7,15 @@ export const CheckboxDemo = () => {
 
   return (
     <div style={{ display: 'flex', 'flex-direction': 'column', gap: '1rem', padding: '2rem' }}>
-      <Checkbox label='Accept terms and conditions' />
-      <Checkbox label='Subscribe to newsletter' defaultChecked />
-      <Checkbox label='Disabled checkbox' disabled />
+      <Checkbox label="Accept terms and conditions" />
+      <Checkbox label="Subscribe to newsletter" defaultChecked />
+      <Checkbox label="Disabled checkbox" disabled />
       <Checkbox
-        label='Controlled checkbox'
+        label="Controlled checkbox"
         checked={checked()}
         onCheckedChange={e => setChecked(e.checked)}
       />
-      <Checkbox label='Invalid checkbox' invalid />
+      <Checkbox label="Invalid checkbox" invalid />
     </div>
   );
 };

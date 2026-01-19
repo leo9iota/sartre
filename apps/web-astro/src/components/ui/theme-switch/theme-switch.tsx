@@ -1,8 +1,7 @@
-import { createSignal, splitProps } from 'solid-js';
-import type { ParentProps } from 'solid-js';
-
 import { Switch as ArkSwitch } from '@ark-ui/solid/switch';
 import { Moon, Sun } from 'lucide-solid';
+import { createSignal, splitProps } from 'solid-js';
+import type { ParentProps } from 'solid-js';
 
 import { useTheme } from '../../../lib/theme/theme-context';
 import * as styles from './theme-switch.css';

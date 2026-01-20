@@ -1,6 +1,6 @@
 import { globalLayer, globalStyle } from '@vanilla-extract/css';
 
-import { vars } from './vars.css'; // Ensure this points to your theme contract
+import { vars } from '../../../web-legacy/src/styles/vars.css'; // Ensure this points to your theme contract
 
 /**
  * Create a 'reset' layer to ensure these styles have the lowest specificity.

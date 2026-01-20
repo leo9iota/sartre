@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-import { vars } from './vars.css';
+import { vars } from '../../../web-legacy/src/styles/vars.css';
 
 export const container = style({
     width: '100%',

@@ -1,0 +1,21 @@
+---
+import { SignUp as SignUpComponent } from '../components/auth/sign-up';
+import RootLayout from '../layouts/root-layout.astro';
+
+// TODO: Server-side auth check
+---
+
+<RootLayout title='Sign Up | Sartre'>
+  <div class='page-container'>
+    <SignUpComponent client:load />
+  </div>
+</RootLayout>
+
+<style>
+  .page-container {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

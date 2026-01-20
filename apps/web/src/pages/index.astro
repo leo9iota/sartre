@@ -1,0 +1,75 @@
+---
+import { Footer } from '../components/layout/footer';
+import { Header } from '../components/layout/header';
+import { Button } from '../components/ui/button';
+import RootLayout from '../layouts/root-layout.astro';
+
+// Prototype: Mock auth state for now
+const isAuthenticated = false;
+---
+
+<RootLayout title='Sartre | Modern Blog Platform'>
+  <Header isAuthenticated={isAuthenticated} client:load />
+
+  <main class='main-content'>
+    <section class='hero'>
+      <h1 class='text-4xl font-bold mb-4'>Welcome to Sartre</h1>
+      <p class='text-xl text-muted-foreground mb-8'>A thoughtful space for reading and writing.</p>
+
+      <div class='cta-group'>
+        <a href='/sign-up'>
+          <Button variant='solid' size='lg'>Get Started</Button>
+        </a>
+        <a href='/about'>
+          <Button variant='ghost' size='lg'>Learn More</Button>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer client:load />
+</RootLayout>
+
+<style>
+  .main-content {
+    min-height: calc(100vh - 140px); /* header + footer approx height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .hero {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .text-muted-foreground {
+    color: var(--colors-foregroundMuted);
+  }
+
+  .text-4xl {
+    font-size: 2.25rem;
+  }
+  .font-bold {
+    font-weight: 700;
+  }
+  .text-xl {
+    font-size: 1.25rem;
+  }
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  .mb-8 {
+    margin-bottom: 2rem;
+  }
+</style>

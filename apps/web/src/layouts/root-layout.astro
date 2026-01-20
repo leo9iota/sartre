@@ -1,0 +1,56 @@
+---
+import '../styles/reset.css.ts';
+import '../styles/globals.css.ts';
+import '../styles/theme.css.ts';
+
+import { lightTheme as themeClass } from '../styles/theme.css.ts';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Sartre', description = 'A modern blog platform' } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en' class={themeClass}>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content={description} />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+    <script is:inline>
+      const getTheme = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      };
+
+      const theme = getTheme();
+      document.documentElement.classList[theme === 'dark' ? 'add' : 'remove']('dark');
+      document.documentElement.dataset.theme = theme;
+
+      if (typeof localStorage !== 'undefined') {
+        const observer = new MutationObserver(() => {
+          const isDark = document.documentElement.classList.contains('dark');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
+        });
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ['class']
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

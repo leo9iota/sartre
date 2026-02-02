@@ -105,3 +105,30 @@ export const socialButtons = style({
     flexDirection: 'column',
     gap: staticVars.space[3]
 });
+
+export const passwordRequirements = style({
+    display: 'flex',
+    flexDirection: 'column',
+    gap: staticVars.space[1],
+    marginTop: staticVars.space[2],
+    paddingLeft: staticVars.space[2],
+    fontSize: staticVars.fontSizes.xs,
+    color: vars.colors.foregroundMuted
+});
+
+export const passwordRequirement = style({
+    display: 'flex',
+    alignItems: 'center',
+    gap: staticVars.space[2],
+    transition: 'color 0.2s ease'
+});
+
+export const passwordRequirementMet = style({
+    color: vars.colors.success
+});
+
+export const requirementIcon = style({
+    width: '12px',
+    height: '12px',
+    flexShrink: 0
+});

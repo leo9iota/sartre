@@ -1,7 +1,10 @@
 import { createSignal } from 'solid-js';
 
-import { Button } from '../../ui/button';
-import { Input } from '../../ui/input';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+
+import { authClient } from '@/lib/auth/auth-client';
+
 import { SocialButton } from '../social-button';
 import * as styles from './sign-in.css';
 
@@ -34,7 +37,29 @@ export const SignIn = (props: SignInProps) => {
         setError(result.error);
       }
     } else {
-      setLoading(false);
+      const { error: authError } = await authClient.signIn.email({
+        email: email(),
+        password: password(),
+        callbackURL: '/'
+      });
+
+      if (authError) {
+        setError(authError.message || 'An error occurred during sign in');
+        setLoading(false);
+      } else {
+        // Redirect handled by callbackURL
+      }
+    }
+  };
+
+  const handleSocialAuth = async (provider: 'github' | 'google') => {
+    if (props.onSocialAuth) {
+      await props.onSocialAuth(provider);
+    } else {
+      await authClient.signIn.social({
+        provider,
+        callbackURL: '/'
+      });
     }
   };
 
@@ -85,8 +110,8 @@ export const SignIn = (props: SignInProps) => {
         </div>
 
         <div class={styles.socialButtons}>
-          <SocialButton provider='github' onAuth={props.onSocialAuth} />
-          <SocialButton provider='google' onAuth={props.onSocialAuth} />
+          <SocialButton provider='github' onAuth={handleSocialAuth} />
+          <SocialButton provider='google' onAuth={handleSocialAuth} />
         </div>
 
         <div class={styles.footerText}>

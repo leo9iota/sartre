@@ -5,7 +5,7 @@ import { db } from '../db';
 
 export const auth = betterAuth({
     database: drizzleAdapter(db, { provider: 'sqlite' }),
-    trustedOrigins: ['http://localhost:3000'],
+    trustedOrigins: ['http://localhost:3000', 'http://localhost:4321'],
     emailAndPassword: {
         enabled: true
     },

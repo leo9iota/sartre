@@ -13,6 +13,14 @@ export default defineConfig(
         files: ['**/*.{ts,tsx}'],
         ...solid
     },
+    {
+        languageOptions: {
+            parserOptions: {
+                projectService: true,
+                tsconfigRootDir: import.meta.dirname
+            }
+        }
+    },
     eslintConfigPrettier,
     {
         ignores: ['dist/', 'node_modules/', '.astro/']

@@ -1,6 +1,6 @@
-# Sartre
+# Blog
 
-Sartre is a forum for discussing tech related topics.
+Personal blog for technical write-ups.
 
 ## BEAST Stack
 

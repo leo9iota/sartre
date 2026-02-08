@@ -1,5 +1,5 @@
 {
-    "name": "@sartre/server",
+    "name": "@portfolio/api",
     "module": "src/index.ts",
     "type": "module",
     "exports": {

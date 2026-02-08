@@ -1,5 +1,5 @@
 {
-    "name": "sartre",
+    "name": "portfolio",
     "private": true,
     "packageManager": "bun@1.3.5",
     "workspaces": [
@@ -10,11 +10,11 @@
         "build": "turbo run build",
         "dev": "turbo run dev",
         "format": "prettier --write \"**/*.{ts,tsx,js,mjs,json,md,css}\"",
-        "format:web": "prettier --write \"apps/web/**/*.{ts,tsx,js,mjs,json,md}\"",
-        "format:server": "prettier --write \"apps/server/**/*.{ts,js,mjs,json,md}\"",
+        "format:blog": "prettier --write \"apps/blog/**/*.{ts,tsx,js,mjs,json,md,astro}\"",
+        "format:api": "prettier --write \"apps/api/**/*.{ts,js,mjs,json,md}\"",
         "lint": "turbo run lint",
-        "lint:web": "turbo run lint --filter=web",
-        "lint:server": "turbo run lint --filter=server"
+        "lint:blog": "turbo run lint --filter=@portfolio/blog",
+        "lint:api": "turbo run lint --filter=@portfolio/api"
     },
     "devDependencies": {
         "@ianvs/prettier-plugin-sort-imports": "^4.0.0",

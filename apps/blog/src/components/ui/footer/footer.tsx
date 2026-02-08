@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer class={styles.footer}>
       <div class={styles.container}>
-        <p class={styles.copyright}>© 2026 Sartre Blog</p>
+        <p class={styles.copyright}>© 2026 Blog</p>
         <ThemeSwitch />
       </div>
     </footer>

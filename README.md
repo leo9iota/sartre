@@ -1,6 +1,6 @@
 # Sartre
 
-Sartre is a forum for discussing tech related topics.
+Sartre is a forum for discussing tech related topics. (basically a Hacker News clone)
 
 ## BEAST Stack
 
